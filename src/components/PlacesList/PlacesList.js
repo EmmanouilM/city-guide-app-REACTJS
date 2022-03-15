@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './PlacesList.css'
+import PlaceItem from '../PlaceItem/PlaceItem';
 
 const PlacesList = () => {
   const ratingOptions = [
@@ -9,6 +10,18 @@ const PlacesList = () => {
     { id: 3, label: "Above 4.0", value: "4" },
     { id: 4, label: "Above 4.5", value: "4.5" },
   ];
+  const places = [
+    { name: "Place One" },
+    { name: "Place Two" },
+    { name: "Place Three" },
+    { name: "Place Four" },
+    { name: "Place Five" },
+    { name: "Place Six" },
+    { name: "Place Seven" },
+    { name: "Place Eight" },
+    { name: "Place Nine" },
+    { name: "Place Ten" },
+  ]; 
   const [rating, setRating] = useState("");
   const handleRatingChange = (event) => {
     setRating(event.target.value);
@@ -27,6 +40,12 @@ const PlacesList = () => {
         </select>
       </div>
     </div>
+    <div>
+        {places?.map((place, i) => (
+          <PlaceItem key={i} place={place} />
+        ))}
+      </div>
+  
     </div>
   )
 }

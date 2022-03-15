@@ -1,9 +1,9 @@
 import React from 'react'
 import './PlaceItem.css'
 
-const PlaceItem = () => {
+const PlaceItem = ({place}) => {
   return (
-    <div>PlaceItem</div>
+    <div>{place.name}</div>
   )
 }
 
