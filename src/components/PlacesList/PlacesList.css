@@ -9,3 +9,30 @@
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.rating {
+  padding: 0 var(--space-100);
+}
+.rating-control {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-200);
+}
+.rating label,
+.rating select {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--deep-blue-200);
+}
+.rating label {
+  margin-right: var(--space-200);
+}
+.rating select {
+  padding: 0.5rem var(--space-200);
+  font-weight: 500;
+  border-radius: 4px;
+  background-color: var(--light-blue-200);
+  border-bottom: 2px solid #b3bece;
+}
