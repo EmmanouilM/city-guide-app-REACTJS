@@ -8,8 +8,18 @@
   margin-left: var(--space-200);
   overflow-x: hidden;
   overflow-y: auto;
+  position: relative;
+  border-left: 2px solid #b3bece;
+  scroll-behavior: smooth;
 }
-
+.placesList::-webkit-scrollbar {
+  width: 1rem;
+}
+.placesList::-webkit-scrollbar-track,
+.placesList::-webkit-scrollbar-thumb {
+  background: transparent;
+  box-shadow: var(--box-shadow);
+}
 .rating {
   padding: 0 var(--space-100);
 }
