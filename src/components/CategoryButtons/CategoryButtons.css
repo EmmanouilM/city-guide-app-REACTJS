@@ -1,0 +1,59 @@
+.category-buttons {
+    height: calc(90vh - 4rem);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   flex-basis: 12%;
+ }
+ .category-buttons button {
+   background-color: var(--light-blue-200);
+   border: 2px solid var(--light-blue-200);
+   border-radius: 4px;
+   cursor: pointer;
+   transition: var(--transition);
+   font-family: inherit;
+   font-size: inherit;
+   font-weight: 500;
+   letter-spacing: 0.3px;
+   color: var(--deep-blue-200);
+   margin-right: var(--space-200);
+   width: 15rem;
+   height: 15rem;
+ }
+ .button__content {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+ .category-buttons button:not(:last-of-type) {
+   margin-bottom: var(--space-400);
+ }
+ .category-buttons button:hover {
+   background-color: var(--light-blue-300);
+   border: 2px solid var(--light-blue-100);
+ }
+ .category-buttons button:focus {
+   background-color: var(--light-blue-200) !important;
+   border: 2px solid var(--gold) !important;
+ }
+ .category-buttons button:active {
+   transform: translateY(2px);
+ }
+ .button__content .icon {
+   width: 6rem;
+   height: 6rem;
+   background-size: cover;
+   margin-bottom: var(--space-200);
+ }
+ .icon-hotel {
+   background-image: url(../../../public/assets/images/hotel.svg);
+   margin-left: 6%;
+ }
+ .icon-restaurant {
+   background-image: url(../../../public/assets/images/restaurant.svg);
+ }
+ .icon-attraction {
+   background-image: url(../../../public/assets/images/attraction.svg);
+ }
