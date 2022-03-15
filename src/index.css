@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  /* color variables  */
+  --light-blue-100: #eef3fd;
+  --light-blue-200: #e1e9f8;
+  --light-blue-300: #d2ddf0;
+  --light-blue-400: #4c6fac;
+  --deep-blue-100: #2855a4;
+  --deep-blue-200: #102750;
+  --deep-blue-300: #071225;
+  --gold: #fdbf49;
+
+  /* font variables  */
+  --font-size: 1rem;
+  --font-size-100: 1.5rem;
+  --font-size-400: 2.6rem;
+
+  /* margin/padding variables  */
+  --space-100: 1rem;
+  --space-200: 2rem;
+  --space-400: 4rem;
+
+  /* transition variables  */
+  --transition: all 0.3s ease-out;
+
+  /* border variables  */
+  --box-shadow: inset 0 -0.6em 1em -0.35em rgba(10, 18, 32, 0.226),
+    inset 0 0.6em 2em -0.3em rgba(69, 122, 155, 0.247),
+    inset 0 0 0em 0.05em rgba(6, 19, 46, 0.26);
+  --box-shadow-card: 0 1px 3px rgba(19, 46, 87, 0.25);
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  transition: var(--transition);
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  overflow: auto;
+  scroll-padding-top: 3rem;
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 2rem;
+}
+html::-webkit-scrollbar-track,
+html::-webkit-scrollbar-thumb {
+  background: transparent;
+  box-shadow: var(--box-shadow);
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--font-size-100);
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.1rem;
+  background-color: var(--light-blue-300);
+  color: var(--deep-blue-300);
+}
