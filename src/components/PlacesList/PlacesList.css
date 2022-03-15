@@ -1,0 +1,11 @@
+.placesList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: 33%;
+  height: calc(90vh - 4rem);
+  margin-left: var(--space-200);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
