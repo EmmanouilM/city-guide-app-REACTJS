@@ -33,6 +33,7 @@ console.log(data);
         setCoordinates={setCoordinates}
         setBounds={setBounds}
         coordinates={coordinates}
+        places={places}
         />
         <PlacesList places={places} />
       </div>

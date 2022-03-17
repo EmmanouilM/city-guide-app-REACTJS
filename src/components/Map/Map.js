@@ -1,8 +1,21 @@
 import React from "react";
 import "./Map.css";
 import GoogleMapReact from "google-map-react";
+import PrettyRating from "pretty-rating-react";
+import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
 
-const Map = ({ setCoordinates, setBounds, coordinates }) => {
+const icons = {
+  star: {
+    complete: faStar,
+    half: faStarHalfAlt,
+    empty: faStar,
+  },
+};
+const colors = {
+  star: ["#fdbf49", "#fdbf49", "#ffffff"],
+};
+
+const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
   return (
     <div className='map-container'>
       <GoogleMapReact
@@ -18,7 +31,32 @@ const Map = ({ setCoordinates, setBounds, coordinates }) => {
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
         }}
         onChildClick={""}
-      ></GoogleMapReact>
+      >
+        {places?.map((place, i) => (
+          <div
+            className='map-marker'
+            lat={Number(place.latitude)}
+            lng={Number(place.longitude)}
+            key={i}
+          >
+            <span> {place.name}</span>
+            <img
+              className='place-photo--small'
+              src={
+                place.photo
+                  ? place.photo.images.large.url
+                  : "https://images.unsplash.com/photo-1415025148099-17fe74102b28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=975&q=80"
+              }
+              alt={place.name}
+            />
+            <PrettyRating
+              value={place.rating}
+              icons={icons.star}
+              colors={colors.star}
+            />
+          </div>
+        ))}
+      </GoogleMapReact>
     </div>
   );
 };

@@ -1,6 +1,27 @@
 .map-container {
-    display: flex;
-     flex:1; 
-    height: calc(90vh - 4rem);
-  }
-  
+  display: flex;
+  flex: 1;
+  height: calc(90vh - 4rem);
+}
+.map-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow-card);
+  padding: 0.6rem 1.3rem;
+}
+.map-marker span {
+  font-size: var(--font-size);
+  font-weight: 600;
+  color: var(--deep-blue-300);
+}
+.place-photo--small {
+  display: flex;
+  margin: 0.5rem 0;
+  width: 8rem;
+  height: auto;
+}
+
