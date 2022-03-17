@@ -6,7 +6,9 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faAward } from "@fortawesome/free-solid-svg-icons";
 
-const PlaceItem = ({ place }) => {
+const PlaceItem = ({ place, selected, refProp }) => {
+  if (selected)
+    refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   return (
     <div className='placeItem'>
       <Card>
