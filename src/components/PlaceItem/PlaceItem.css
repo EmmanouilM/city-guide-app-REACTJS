@@ -1,5 +1,103 @@
 .placeItem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  margin: 0 1rem var(--space-100) var(--space-200);
+}
+.place-primary-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  height: 11rem;
+}
+.place-photo {
+  width: 15rem;
+  height: 11rem;
+  margin-right: var(--space-100);
+}
+.place-primary-info aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  flex: 1;
+}
+.place-primary-info aside div:nth-of-type(1) div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.2rem;
+  align-items: center;
+}
+.place-primary-info aside div:nth-of-type(1) h3 {
+  line-height: 1.6rem;
+  margin-bottom: 1rem;
+}
+.place-primary-info aside div:nth-of-type(1) div p:nth-of-type(1) {
+  margin-right: 2rem;
+  font-weight: 600;
+  color: var(--light-blue-100);
+  border-radius: 4px 10px;
+  background-color: var(--deep-blue-100);
+  padding: 0.5rem;
+}
+.place-primary-info aside div:nth-of-type(1) span {
+  font-weight: 600;
+  color: var(--light-blue-400);
+  line-height: 3rem;
+}
+.place-primary-info aside div:nth-of-type(2) {
+  font-size: var(--font-size);
+  font-weight: 600;
+}
+.place-primary-info aside div:nth-of-type(2) span {
+  padding: 0.1rem 0.4rem;
+  background-color: var(--light-blue-300);
+}
+.place-secondary-info article {
+  padding-top: 1rem;
+  border-top: 1px solid #d0dbec;
+}
+.place-secondary-info article span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+}
+.place-secondary-info article span .icon {
+  width: 1.2rem;
+  height: auto;
+  margin-right: 2rem;
+  color: var(--deep-blue-100);
+}
+.place-secondary-info article button {
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 1px solid var(--deep-blue-100);
+  color: var(--deep-blue-100);
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: var(--font-size-100);
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+.place-secondary-info article button:first-of-type {
+  margin-right: 2rem;
+}
+.place-cuisine {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.place-cuisine p {
+  color: var(--light-blue-100);
+  padding: 0.3rem 0.5rem;
+  background-color: var(--deep-blue-100);
+  border-radius: 4px;
+  letter-spacing: 0.2px;
 }

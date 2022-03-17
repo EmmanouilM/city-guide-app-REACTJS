@@ -5,7 +5,7 @@
   --light-blue-100: #eef3fd;
   --light-blue-200: #e1e9f8;
   --light-blue-300: #d2ddf0;
-  --light-blue-400: #4c6fac;
+  --light-blue-400: #587bb8;
   --deep-blue-100: #2855a4;
   --deep-blue-200: #102750;
   --deep-blue-300: #071225;
@@ -13,7 +13,8 @@
 
   /* font variables  */
   --font-size: 1rem;
-  --font-size-100: 1.5rem;
+  --font-size-100: 1.3rem;
+  --font-size-200: 1.6rem;
   --font-size-400: 2.6rem;
 
   /* margin/padding variables  */
@@ -66,3 +67,19 @@ body {
   background-color: var(--light-blue-300);
   color: var(--deep-blue-300);
 }
+p {
+  font-size: var(--font-size-100);
+  letter-spacing: 0.2px;
+}
+h3 {
+  color:var(--deep-blue-200);
+  font-size: var(--font-size-200);
+}
+
+h6 {
+  color:var(--light-blue-300);
+  font-size: 0.8rem;
+  
+}
+
+

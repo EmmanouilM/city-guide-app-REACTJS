@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  flex-basis: 33%;
+  flex-basis: 50rem;
   height: calc(90vh - 4rem);
   margin-left: var(--space-200);
   overflow-x: hidden;
@@ -46,3 +46,4 @@
   background-color: var(--light-blue-200);
   border-bottom: 2px solid #b3bece;
 }
+
