@@ -3,7 +3,7 @@ import { CircularProgress } from "@material-ui/core";
 import "./PlacesList.css";
 import PlaceItem from "../PlaceItem/PlaceItem";
 
-const PlacesList = ({ places, childClicked, isLoading }) => {
+const PlacesList = ({ places, childClicked, isLoading,rating,setRating }) => {
   const ratingOptions = [
     { id: 0, label: "All", value: "0" },
     { id: 1, label: "Above 2.0", value: "2" },
@@ -11,7 +11,6 @@ const PlacesList = ({ places, childClicked, isLoading }) => {
     { id: 3, label: "Above 4.0", value: "4" },
     { id: 4, label: "Above 4.5", value: "4.5" },
   ];
-  const [rating, setRating] = useState("");
   const [elRefs, setElRefs] = useState([]);
   const handleRatingChange = (event) => {
     setRating(event.target.value);

@@ -12,6 +12,8 @@ const App = () => {
   const [coordinates, setCoordinates] = useState({});
   const [bounds, setBounds] = useState({ sw: 0, ne: 0 });
   const [isLoading, setIsLoading] = useState(false);
+  const [rating, setRating] = useState("");
+  const [filteredPlaces, setFilteredPlaces] = useState([]);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
@@ -20,9 +22,14 @@ const App = () => {
     );
   }, []);
   useEffect(() => {
+    const filteredPlaces = places.filter((place) => Number(place.rating) > rating);
+    setFilteredPlaces(filteredPlaces);
+  }, [rating]);
+  useEffect(() => {
     setIsLoading(true);
     getPlacesData(bounds.sw, bounds.ne).then((data) => {
       setPlaces(data);
+      setFilteredPlaces([]);
       setIsLoading(false);
     });
   }, [coordinates, bounds]);
@@ -35,13 +42,15 @@ const App = () => {
           setCoordinates={setCoordinates}
           setBounds={setBounds}
           coordinates={coordinates}
-          places={places}
+          places={filteredPlaces.length ? filteredPlaces : places}
           setChildClicked={setChildClicked}
         />
         <PlacesList
-          places={places}
+          places={filteredPlaces.length ? filteredPlaces : places}
           childClicked={childClicked}
           isLoading={isLoading}
+          rating={rating}
+          setRating={setRating}
         />
       </div>
     </div>
