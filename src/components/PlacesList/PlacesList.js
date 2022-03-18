@@ -1,8 +1,9 @@
 import React, { useState, useEffect, createRef } from "react";
+import { CircularProgress } from "@material-ui/core";
 import "./PlacesList.css";
 import PlaceItem from "../PlaceItem/PlaceItem";
 
-const PlacesList = ({ places, childClicked }) => {
+const PlacesList = ({ places, childClicked, isLoading }) => {
   const ratingOptions = [
     { id: 0, label: "All", value: "0" },
     { id: 1, label: "Above 2.0", value: "2" },
@@ -16,39 +17,44 @@ const PlacesList = ({ places, childClicked }) => {
     setRating(event.target.value);
   };
   useEffect(() => {
-    const refs = Array(places.length)
+    const refs = Array(places?.length)
       .fill()
       .map((_, i) => elRefs[i] || createRef());
     setElRefs(refs);
   }, [places]);
-
   return (
     <div className='placesList'>
-      <div className='rating'>
-        <div className='rating-control'>
-          <label>Rating</label>
-          <select value={rating} onChange={handleRatingChange}>
-            {ratingOptions.map((ratingOption) => (
-              <option key={ratingOption.id} value={ratingOption.value}>
-                {ratingOption.label}
-              </option>
-            ))}
-          </select>
+      {isLoading ? (
+        <div className='loading'>
+          <CircularProgress size='5rem' />
         </div>
-      </div>
-      <div>
-        {places?.map(
-          (place, i) =>
-            place.name && (
-              <PlaceItem
-                key={i}
-                place={place}
-                selected={Number(childClicked) === i}
-                refProp={elRefs[i]}
-              />
-            )
-        )}
-      </div>
+      ) : (
+        <>
+          <div className='rating'>
+            <div className='rating-control'>
+              <label>Rating</label>
+              <select value={rating} onChange={handleRatingChange}>
+                {ratingOptions.map((ratingOption) => (
+                  <option key={ratingOption.id} value={ratingOption.value}>
+                    {ratingOption.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          <div>
+            {places?.map((place, i) => (
+              <div ref={elRefs[i]} key={i}>
+                <PlaceItem
+                  place={place}
+                  selected={Number(childClicked) === i}
+                  refProp={elRefs[i]}
+                />
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

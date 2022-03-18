@@ -7,8 +7,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faAward } from "@fortawesome/free-solid-svg-icons";
 
 const PlaceItem = ({ place, selected, refProp }) => {
-  if (selected)
-    refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+ if(selected) refProp?.current?.scrollIntoView({behaviour:"smooth", block:"start"})
   return (
     <div className='placeItem'>
       <Card>
@@ -50,7 +49,7 @@ const PlaceItem = ({ place, selected, refProp }) => {
           )}
           <article>
             {place?.awards?.map((award) => (
-              <span>
+              <span key={award.display_name}>
                 <FontAwesomeIcon className='icon award-icon' icon={faAward} />
                 {award.display_name}
               </span>

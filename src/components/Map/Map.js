@@ -56,7 +56,7 @@ const Map = ({
               alt={place.name}
             />
             <PrettyRating
-              value={place.rating}
+              value={Number(place.rating)}
               icons={icons.star}
               colors={colors.star}
             />
