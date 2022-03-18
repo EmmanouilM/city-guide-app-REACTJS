@@ -12,6 +12,7 @@ const App = () => {
   const [coordinates, setCoordinates] = useState({});
   const [bounds, setBounds] = useState({ sw: 0, ne: 0 });
   const [isLoading, setIsLoading] = useState(false);
+  const [type, setType] = useState("hotels");
   const [rating, setRating] = useState("");
   const [filteredPlaces, setFilteredPlaces] = useState([]);
   useEffect(() => {
@@ -22,22 +23,24 @@ const App = () => {
     );
   }, []);
   useEffect(() => {
-    const filteredPlaces = places.filter((place) => Number(place.rating) > rating);
+    const filteredPlaces = places.filter(
+      (place) => Number(place.rating) > rating
+    );
     setFilteredPlaces(filteredPlaces);
   }, [rating]);
   useEffect(() => {
     setIsLoading(true);
-    getPlacesData(bounds.sw, bounds.ne).then((data) => {
+    getPlacesData(type, bounds.sw, bounds.ne).then((data) => {
       setPlaces(data);
       setFilteredPlaces([]);
       setIsLoading(false);
     });
-  }, [coordinates, bounds]);
+  }, [type, coordinates, bounds]);
   return (
     <div className='container'>
       <Header />
       <div className='content'>
-        <CategoryButtons />
+        <CategoryButtons setType={setType} />
         <Map
           setCoordinates={setCoordinates}
           setBounds={setBounds}
@@ -51,6 +54,8 @@ const App = () => {
           isLoading={isLoading}
           rating={rating}
           setRating={setRating}
+          type={type}
+          setType={setType}
         />
       </div>
     </div>
