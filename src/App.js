@@ -15,6 +15,7 @@ const App = () => {
   const [type, setType] = useState("hotels");
   const [rating, setRating] = useState("");
   const [filteredPlaces, setFilteredPlaces] = useState([]);
+  const [autocomplete, setAutocomplete] = useState(null);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
@@ -35,10 +36,16 @@ const App = () => {
       setFilteredPlaces([]);
       setIsLoading(false);
     });
-  }, [type, coordinates, bounds]);
+  }, [type, bounds]);
+  const onLoad = (autoC) => setAutocomplete(autoC);
+  const onPlaceChanged = () => {
+    const lat = autocomplete.getPlace().geometry.location.lat();
+    const lng = autocomplete.getPlace().geometry.location.lng();
+    setCoordinates({ lat, lng });
+  };
   return (
     <div className='container'>
-      <Header />
+      <Header onPlaceChanged={onPlaceChanged} onLoad={onLoad} />
       <div className='content'>
         <CategoryButtons setType={setType} />
         <Map
