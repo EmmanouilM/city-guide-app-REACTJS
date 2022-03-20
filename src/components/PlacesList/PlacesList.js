@@ -6,10 +6,10 @@ import PlaceItem from "../PlaceItem/PlaceItem";
 const PlacesList = ({ places, childClicked, isLoading,rating,setRating }) => {
   const ratingOptions = [
     { id: 0, label: "All", value: "0" },
-    { id: 1, label: "Above 2.0", value: "2" },
-    { id: 2, label: "Above 3.0", value: "3" },
-    { id: 3, label: "Above 4.0", value: "4" },
-    { id: 4, label: "Above 4.5", value: "4.5" },
+    { id: 2, label: "Above 2.0", value: "2" },
+    { id: 3, label: "Above 3.0", value: "3" },
+    { id: 4, label: "Above 4.0", value: "4" },
+    { id: 4.5, label: "Above 4.5", value: "4.5" },
   ];
   const [elRefs, setElRefs] = useState([]);
   const handleRatingChange = (event) => {

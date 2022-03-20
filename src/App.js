@@ -30,12 +30,16 @@ const App = () => {
     setFilteredPlaces(filteredPlaces);
   }, [rating]);
   useEffect(() => {
-    setIsLoading(true);
-    getPlacesData(type, bounds.sw, bounds.ne).then((data) => {
-      setPlaces(data);
-      setFilteredPlaces([]);
-      setIsLoading(false);
-    });
+    if (bounds) {
+      setIsLoading(true);
+      getPlacesData(type, bounds.sw, bounds.ne)
+        .then((data) => {
+          setPlaces(data.filter((place) => place.name && place.num_reviews > 0));
+          setFilteredPlaces([]);
+          setRating('');
+          setIsLoading(false);
+        });
+    }
   }, [type, bounds]);
   const onLoad = (autoC) => setAutocomplete(autoC);
   const onPlaceChanged = () => {
