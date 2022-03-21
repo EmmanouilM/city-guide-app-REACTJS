@@ -34,7 +34,7 @@
    background-color: var(--light-blue-300);
    border: 2px solid var(--light-blue-100);
  }
- .category-buttons button:focus {
+  .category-buttons button:focus,.active {
    background-color: var(--light-blue-200) !important;
    border: 2px solid var(--gold) !important;
  }
