@@ -7,8 +7,8 @@ const CategoryButtons = ({ setType }) => {
   const toggleActive = (e) => {
     const currentState = active;
     e.preventDefault();
-    setTypeActive(e.target.value);
-    setType(e.target.value);
+    setTypeActive(e.currentTarget.value);
+    setType(e.currentTarget.value);
     setActive(!currentState);
   };
 
