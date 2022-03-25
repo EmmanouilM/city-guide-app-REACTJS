@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  flex-basis: 50rem;
+  flex-basis: 52rem;
   height: calc(90vh - 4rem);
   margin-left: var(--space-200);
   overflow-x: hidden;

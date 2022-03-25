@@ -8,32 +8,31 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-  height: 11rem;
+  height: auto;
 }
 .place-photo {
   width: 15rem;
-  height: 11rem;
+  height: 13rem;
   margin-right: var(--space-100);
 }
 .place-primary-info aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: auto;
+  min-height: 13rem;
   flex: 1;
 }
 .place-primary-info aside div:nth-of-type(1) div {
   display: flex;
   flex-direction: row;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.7rem;
   align-items: center;
 }
 .place-primary-info aside div:nth-of-type(1) h3 {
-  line-height: 1.6rem;
-  margin-bottom: 1rem;
+  margin-bottom:0.7rem
 }
 .place-primary-info aside div:nth-of-type(1) div p:nth-of-type(1) {
-  margin-right: 2rem;
+  margin-right: var(--space-100);
   font-weight: 600;
   color: var(--light-blue-100);
   border-radius: 4px 10px;
@@ -43,11 +42,11 @@
 .place-primary-info aside div:nth-of-type(1) span {
   font-weight: 600;
   color: var(--light-blue-400);
-  line-height: 3rem;
 }
 .place-primary-info aside div:nth-of-type(2) {
   font-size: var(--font-size);
   font-weight: 600;
+  margin-top:0.7rem;
 }
 .place-primary-info aside div:nth-of-type(2) span {
   padding: 0.1rem 0.4rem;
@@ -63,6 +62,9 @@
   justify-content: space-between;
   margin-bottom: 0.7rem;
   font-size: 1rem;
+}
+.place-secondary-info article h6 {
+  margin-bottom: 0.7rem;
 }
 .place-secondary-info article span .icon {
   width: 1.2rem;

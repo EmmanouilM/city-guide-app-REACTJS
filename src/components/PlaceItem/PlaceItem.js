@@ -7,7 +7,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faAward } from "@fortawesome/free-solid-svg-icons";
 
 const PlaceItem = ({ place, selected, refProp }) => {
- if(selected) refProp?.current?.scrollIntoView({behaviour:"smooth", block:"start"})
+  if(selected) refProp?.current?.scrollIntoView({behaviour:"smooth", block:"start"})
   return (
     <div className='placeItem'>
       <Card>
@@ -26,13 +26,10 @@ const PlaceItem = ({ place, selected, refProp }) => {
               <h3> {place.name}</h3>
               <div>
                 {place.rating && <p>{place.rating}</p>}
-                <p>{place.num_reviews} reviews</p>
+                <p>out of {place.num_reviews} reviews</p>
               </div>
-              {place.price_level ? (
-                <span>{place.price_level}</span>
-              ) : (
-                <h6>no price avalaible</h6>
-              )}
+
+              <span>{place.price_level}</span>
             </div>
             <div>
               <span>{place.ranking}</span>
@@ -56,7 +53,7 @@ const PlaceItem = ({ place, selected, refProp }) => {
             ))}
           </article>
           <article>
-            {place.address && (
+            {place.address ? (
               <span>
                 <FontAwesomeIcon
                   className='icon address-icon'
@@ -64,6 +61,8 @@ const PlaceItem = ({ place, selected, refProp }) => {
                 />
                 {place.address}
               </span>
+            ) : (
+              <h6>no address avalaible</h6>
             )}
             {place.phone ? (
               <span>
@@ -71,7 +70,7 @@ const PlaceItem = ({ place, selected, refProp }) => {
                 {place.phone}
               </span>
             ) : (
-              <p>no phone number</p>
+              <h6>no phone number avalaible</h6>
             )}
           </article>
           <article>

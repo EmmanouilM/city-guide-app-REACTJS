@@ -10,6 +10,7 @@
   --deep-blue-200: #102750;
   --deep-blue-300: #071225;
   --gold: #fdbf49;
+  --gray:#6c7a92;
 
   /* font variables  */
   --font-size: 1rem;
@@ -77,8 +78,10 @@ h3 {
 }
 
 h6 {
-  color:var(--light-blue-300);
-  font-size: 0.8rem;
+  color:var(--gray);
+  font-size: var(--font-size);
+  font-style: italic;
+  font-weight: 500;
   
 }
 
