@@ -14,7 +14,7 @@ const icons = {
   },
 };
 const colors = {
-  star: ["#fdbf49", "#fdbf49", "#ffffff"],
+  star: ["#fdbf49", "#fdbf49", "#7d7360"],
 };
 
 const Map = ({
