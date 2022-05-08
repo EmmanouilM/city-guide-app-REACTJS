@@ -1,3 +1,27 @@
+# City Guide App
+
+Responsive React - Google Maps App
+
+**FEATURES**
+
+* Built with React JS
+* Google Maps API
+* Google Places API
+* Geolocation
+* Travel Advisor API
+* Fetching API data based on the location
+* Data Filtering
+* CSS / Flex structure
+* Responsive design
+
+**VIEWS**
+
+![view](/screenshots/view1.png "view1")
+
+![view](/screenshots/view2.gif "view2")
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
